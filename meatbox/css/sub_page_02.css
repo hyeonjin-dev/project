@@ -1,0 +1,189 @@
+@import url(../css/header.css);
+@import url(../css/footer.css);
+@import url(../css/top_navi.css);
+
+.header {
+    flex-wrap: wrap;
+    height: 90px;
+}
+
+.lnb {top: 91px;}
+
+.location_box {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    margin: 15px 0 0 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+}
+
+.location_box li {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 40px 0 0;
+    position: relative;
+}
+
+.location_box li~li::before,
+.location_box li~li::after,
+.location_box li~li a::before,
+.location_box li~li a::after {
+    content: "";
+    display: block;
+    width: 23px; height: 1px;
+    background: #ccc;
+    position: absolute;
+    top: calc(25% - 1px); left: -20px;
+    transform: rotate(45deg);
+}
+
+.location_box li~li::after,
+.location_box li~li a::after {
+    top: calc(75% - 1px); transform: rotate(135deg);
+}
+
+.location_box li~li a::before,
+.location_box li~li a::after {
+    left: -30px;
+}
+
+/* ----------------------------header------------------------ */
+
+.wrap {
+    margin: 90px 0 60px 0;
+    min-height: calc(100vh - 80px);
+    background: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#filter01, #filter02, #filter03 {display: none;}
+#filter01:checked~.filter .filter01 {color: #FB4747; text-decoration: underline;}
+#filter02:checked~.filter .filter02 {color: #FB4747; text-decoration: underline;}
+#filter03:checked~.filter .filter03 {color: #FB4747; text-decoration: underline;}
+.filter {
+    width: calc(100% - 14px);
+    height: 40px;
+    line-height: 40px;
+    margin: 10px auto 0 auto;
+    display: flex;
+    border: 1px solid #ddd; box-sizing: border-box;
+    background: #fff;
+    justify-content: space-around;
+}
+
+.filter label {
+    font-size: 16px;
+    color: #999;
+}
+
+#filter01:checked~.content_wrap .content01 {order: 4;}
+#filter01:checked~.content_wrap .content02 {order: 5;}
+#filter01:checked~.content_wrap .content03 {order: 3;}
+#filter01:checked~.content_wrap .content04 {order: 2;}
+#filter01:checked~.content_wrap .content05 {order: 1;}
+
+#filter02:checked~.content_wrap .content01 {order: 2;}
+#filter02:checked~.content_wrap .content02 {order: 1;}
+#filter02:checked~.content_wrap .content03 {order: 3;}
+#filter02:checked~.content_wrap .content04 {order: 4;}
+#filter02:checked~.content_wrap .content05 {order: 5;}
+
+#filter03:checked~.content_wrap .content01 {order: 1;}
+#filter03:checked~.content_wrap .content02 {order: 3;}
+#filter03:checked~.content_wrap .content03 {order: 4;}
+#filter03:checked~.content_wrap .content04 {order: 5;}
+#filter03:checked~.content_wrap .content05 {order: 2;}
+
+/* ---------------------------------------filter---------------------------------- */
+
+.content_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 7px;
+    margin: 0 0 10px 0;
+}
+
+.content_wrap a {
+    display: flex;
+    height: 170px;
+    background: #fff;
+    border: 1px solid #ddd; box-sizing: border-box;
+    padding: 10px;
+}
+
+.content_wrap .content01 .img {
+    flex: 1;
+    background: url(../img/product01.jpg) no-repeat center center/contain;
+}
+.content_wrap .content02 .img {
+    flex: 1;
+    background: url(../img/product02.png) no-repeat center center/contain;
+}
+.content_wrap .content03 .img {
+    flex: 1;
+    background: url(../img/product03.png) no-repeat center center/contain;
+}
+.content_wrap .content04 .img {
+    flex: 1;
+    background: url(../img/product04.jpg) no-repeat center center/contain;
+}
+.content_wrap .content05 .img {
+    flex: 1;
+    background: url(../img/product05.jpg) no-repeat center center/contain;
+}
+
+.content_wrap a .txt {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    gap: 0;
+}
+
+.content_wrap a .txt>* {width: 100%;}
+
+.content_wrap a .txt h4 {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.content_wrap a .txt .origin {
+    font-size: 19px;
+    font-weight: 400;
+    color: #999;
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.content_wrap a .txt .rank {
+    display: flex;
+    gap: 5px;
+    margin: 0 0 10px 0;
+}
+
+.content_wrap a .txt .rank span {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.content_wrap a .txt .price {
+    font-size: 19px;
+}
+.content_wrap a .txt .price strong {
+    font-size: 24px;
+    font-weight: 600;
+    color: #FB4747;
+    padding: 0 5px 0 0;
+    letter-spacing: -0.04em;
+}
+

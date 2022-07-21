@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="2.2;url=main_page/main.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEATBOX</title>
+    <style>
+        
+@keyframes logo {
+    100% {
+        top: 24px;
+        left: calc(50% - 28px);
+    }
+}
+
+@keyframes bar {
+    100% {width: 100%;}
+}
+
+@keyframes back {
+    0% {background: rgb(251, 71, 71);}
+    100% {background: rgb(251, 255, 255);}
+}
+
+html, body {height: 100%;}
+
+.splash_page {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 999;
+    animation: back 2s forwards;
+}
+
+.logo_wrap {
+    width: 310px;
+    height: 155px;
+    position: relative;
+    background: #fff;
+    border-radius: 60px;
+    overflow: hidden;
+}
+
+.logo_wrap >* {position: absolute; left: 50%; transform: translateX(-50%);}
+
+.logo_wrap .logo_top {
+    top: 15px; animation: logo 1.6s forwards;
+    z-index: 2;
+}
+
+.logo_wrap .logo {top: 15px;}
+.logo_wrap .txt {top: 83px;}
+.logo_wrap .bar {
+    width: 195px;
+    height: 2px;
+    top: 128px;
+}
+
+.logo_wrap .bar::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background: rgb(251, 71, 71);
+    animation: bar 1.6s forwards;
+}
+    </style>
+</head>
+<body>
+    <div class="splash_page">
+        <div class="logo_wrap">
+            <img src="img/logo_top.png" alt="" class="logo_top">
+            <img src="img/logo_test.png" alt="" class="logo">
+            <img src="img/logo_txt.png" alt="" class="txt">
+            <div class="bar itm"></div>
+        </div>
+    </div>
+</body>
+</html>
